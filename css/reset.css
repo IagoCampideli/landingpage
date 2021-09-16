@@ -8,7 +8,9 @@ html {
 }
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
+  color: var(--primary-color); /*sem background o texto fica azul*/
+  line-height: 1.5;
 }
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; */
@@ -38,4 +40,8 @@ h5 {
 }
 h6 {
   font-size: 3.5rem;
+}
+/*AQUI RESETA O LINK, TIRA SUBLINHADO*/
+a {
+  text-decoration: none;
 }

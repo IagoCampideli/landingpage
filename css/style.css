@@ -1,3 +1,102 @@
-.teste {
-  background: red;
+/*CRIANDO VÁRIAVEIS GLOBAIS*/
+:root {
+  --primary-color: #0a1128;
+  --white-color: #ffffff;
+  --light-gray-color: #eee;
+  --sobreposicao-cor: #dc143c;
+  --gap: 3rem; /*espaçamento (margem)de 3rem para todas as sessões*/
+}
+.main-bg {
+  /*para quanto quiser colocar a img de background */
+  background-image: url("/img/main-bg.svg");
+  background-size: cover;
+  background-position: center center;
+  color: var(--white-color); /*com a imagem de background o texto fica branco*/
+}
+.white-bg {
+  background: var(--white-color); /*fundo da cor branca*/
+}
+/*aqui está a estrutura principal da página*CLASSE ESTRUTURAL*/
+.main-content {
+  /*sustentar o conteudo a 1200px*/
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: var(--gap); /*margem padrao da página*/
+}
+.section {
+  min-height: 100vh; /*essa classe deixa o container com 100 vh,
+  100vh é igual a altura do viewport*/
+}
+.menu {
+  position: fixed; /*Para o menu desce junto com a rolagem da página*/
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: solid 0.01rem var(--light-gray-color);
+  z-index: 1;
+}
+/*separando H1 E NAV do menu, um de cada lado*/
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*itens se alinham ao centro no eixo perpendicular*/
+  /*PARA O a DE h1 DEFINIR O TAMANHO DOS ITENS DO MENU**definir o tamanho de a em menu ul li a*/
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.menu h1 {
+  font-size: 2.3rem; /*ajustando o tamanho da fonte da logo, por padrao era 6rem, definido no reset*/
+  color: var(--primary-color);
+}
+.menu h1 a {
+  color: inherit; /*herdar a cor do pai*/
+}
+.menu ul {
+  list-style: none;
+  display: flex; /*coloca os itens da ul um do lado do outro*/
+}
+.menu ul li a {
+  display: block; /*para ajustar diretamente no a da UL*/
+  padding: 2rem; /*aqui está sendo definido a altura do menu, além do espaço entre: intro, top3, gallery, work, contact*/
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+/*quando passar o mouse por cima de intro, top3, gallery... a cor muda para cinza*/
+.menu ul li a:hover {
+  color: var(--sobreposicao-cor);
+  transition: all 300ms ease-in-out; /*cor vai aparecendo com efeito*/
+}
+/*DIV VAZIA*/
+/**/
+/**/
+.menu-spacing {
+  height: 6.5rem;
+}
+/*INICIO CONTEUD*/
+.intro-content {
+  position: relative;
+  top: -5rem;
+  display: grid;
+  /*dividiu em grid de 2 colunas, com 1 fragmento para cada lado (1 os textos, 1 imagem*/
+  grid-template-columns: 1fr 1fr;
+  align-items: center; /*alinha os conteudos dentro da coluna ao centro*/
+  gap: var(--gap);
+}
+/*CRIANDO UM CONTAINER FLEX DENTRO DA COLUNA DO GRIDE, PARA ALINHAR AO CENTRO*/
+.intro-text-content,
+intro-img {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+.intro-text-content h2 {
+  font-size: 4rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.intro-img img {
+  max-width: 100%; /*imagem se adquadndo ao tamanho do seu pai*/
+  height: auto;
 }
